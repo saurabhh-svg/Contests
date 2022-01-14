@@ -8,19 +8,31 @@
 using namespace std;
 
 void solve(){
-    ll n,z;
+    ll n, x,z,sum=0,ans=0,flag=0;
+    cin >> n >> x;
     vector<int> v;
     fl(i,n){
         cin >> z;
         v.pb(z);
     }
-    int l = 0, r = 0;
-    while(l<n){
-        if()
+    sort(vr(v),greater<int>());
+fl(i,n){
+    sum += v[i];
+    ans++;
+    if (sum >= x){
+        flag = 1;
+        break;
     }
 }
+if(flag==1)
+cout << ans << endl;
+else
+cout << "-1" << endl;
+}
 int main(){ _
-
+ll test;
+ cin>>test;
+ while(test--){
 solve();
 }
 return 0;
