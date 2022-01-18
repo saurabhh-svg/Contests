@@ -8,7 +8,7 @@
 using namespace std;
 
 void solve(){
-    ll n,z,sum=0,rem=0,s=0,indexi=0,indexj=0;
+    ll n,z,sum=0,rem=0,factor=0;
     vector<int> v;
     cin >> n;
     fl(i,n){
@@ -16,7 +16,8 @@ void solve(){
         v.pb(z);
         sum += z;
     }
-    sort(vr(v));
+   ll mn = *min_element(v.begin(), v.end());
+   ll mnindex=min_element(v.begin(),v.end()) - v.begin();
 
     if ((sum & (sum - 1)) == 0)
     { // if sum is power of 2
@@ -24,29 +25,15 @@ void solve(){
         return;
     }
     ll bit=log2(sum);
-    rem = pow(2, (bit + 1)) - sum;
+    rem = pow(2, (bit + 1)) - sum; //diff bw next pow of 2 and current sum
 
-    fl(i,n){
-        s = 0;
-        for (int j = i; j < n; j++)
-        {
-            s += v[j];
-            if(s==rem){
-                indexi = i;
-                indexj = j;
-                break;
-            }
-            if(s>rem){
-                continue;
-            }
-        }
-    }
-    
-
-    
-
-
+  factor = (rem+v[0])/mn;
+  cout << "1" << endl;
+  cout << "1"
+       << " " << factor << endl;
+  cout << mnindex+1 << endl;
 }
+
 int main(){ _
 ll test;
  cin>>test;

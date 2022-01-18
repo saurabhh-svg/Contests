@@ -8,21 +8,22 @@
 using namespace std;
 
 void solve(){
-    ll n,ans=0;
+    ll n;
     cin >> n;
     int a[4][4]={0};
     for (int i = 1; i <= 3;i++){
         for (int j = 1; j <= 3;j++)
             cin >> a[i][j];
     }
-    ll rem1 = n - a[1][1];
-      ll rem2 = n - a[2][2];
-        ll rem3 = n - a[3][3];
-
-        ans = max(rem1 , max(rem2, rem3));
-        // ans = max(n-a[1][1],max(n-a[2][2],n-a[3][3])) ;
-        cout<< ans << endl;
-
+ if(a[1][1]==n && a[2][2]==n && a[3][3]==n){
+   cout << 0 << endl;
+   return;
+ }
+ int lower = a[2][1] + a[3][1] + a[3][2];
+ int upper = a[1][2] + a[1][3] + a[2][3];
+ cout << max(lower, upper) << endl;
+ // ans = max(rem1 , max(rem2, rem3));
+ //  ans = max(n-a[1][1],max(n-a[2][2],n-a[3][3])) ;
 }
 int main(){ _
 ll test;

@@ -1,6 +1,11 @@
 {
   "files.associations": {
     "*.ejs": "html",
-    "iostream": "cpp"
+    "iostream": "cpp",
+    "vector": "cpp",
+    "algorithm": "cpp",
+    "random": "cpp",
+    "ostream": "cpp",
+    "iterator": "cpp"
   }
 }
