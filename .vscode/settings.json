@@ -8,5 +8,6 @@
     "ostream": "cpp",
     "iterator": "cpp",
     "string": "cpp"
-  }
+  },
+  "C_Cpp.errorSquiggles": "Enabled"
 }
