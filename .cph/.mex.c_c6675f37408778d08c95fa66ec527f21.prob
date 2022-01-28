@@ -1,0 +1,1 @@
+{"name":"Local: mex","url":"/Users/mymac/Desktop/Contests/mex.c","tests":[{"id":1643212558844,"input":"3\n3 3 3\n4 3 2\n5 4 5","output":"0 1 2\n1 0 1 1\n-1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/mymac/Desktop/Contests/mex.c","group":"local","local":true}

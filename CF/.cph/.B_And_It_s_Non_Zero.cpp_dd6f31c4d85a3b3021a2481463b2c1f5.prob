@@ -1,0 +1,1 @@
+{"name":"Local: B_And_It_s_Non_Zero","url":"/Users/mymac/Desktop/Contests/CF/B_And_It_s_Non_Zero.cpp","tests":[{"id":1643264534516,"input":"5\n1 2\n2 8\n4 5\n1 5\n100000 200000","output":"1\n3\n0\n2\n31072"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/mymac/Desktop/Contests/CF/B_And_It_s_Non_Zero.cpp","group":"local","local":true}
