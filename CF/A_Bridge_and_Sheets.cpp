@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+#include<unordered_map>
+#define _ ios_base::sync_with_stdio(0);cin.tie(0);
+#define ll long long int
+#define pb push_back
+#define fl(i,n) for(int i=0;i<n;i++)
+#define pi 3.141592653589793238
+#define vr(v) v.begin(),v.end()
+#define rv(v) v.end(),v.begin()
+#define cn(arr,n) for(int i=0;i<n;i++)cin>>arr[i]
+#define ct(arr,n) for(int i=0;i<n;i++)cout<<arr[i]<<' '; cout<<endl
+using namespace std;
+
+void solve(){
+    ll n,l,w,ans=0;
+    cin >> n >> l >> w;
+     unordered_map<ll, ll> mp;
+    fl(i, n){
+        int z;
+        cin >> z;
+       for (int j = z; j <= z + w;j++){
+           mp[j]++;
+       }
+    }
+    ll i = 0;
+    while (i < l)
+    {
+        if(mp[i]==0){
+            ans++;
+            i = i + w;
+        }
+            i = i + w;
+    }
+    cout << ans << endl;
+    mp.clear();
+}
+
+//===========MAIN BEGIN===========
+
+int main(){ _
+
+solve();
+
+return 0;
+ }
