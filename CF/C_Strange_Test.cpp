@@ -21,7 +21,8 @@ using namespace std;
 ll find(ll a,ll b){
     if(a==b)
         return 0;
-    if((a|b)<=b)
+
+    if((a|b)<=b )
         a = a | b;
     ll ans1 = find(a + 1, b);
     ll ans2 = find(a, b + 1);

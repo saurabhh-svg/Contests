@@ -20,15 +20,15 @@ using namespace std;
 
 void solve()
 {
-    ll n, s = 1, p = 1;
-    cin >> n;
-    while (n > p*2)  p = p* 2;
-
-    for (int i = n - 1; i >= p;i--)
-        cout << i << " ";
-    for (int i = 0; i < p;i++)
-        cout << i << " ";
-    cout << endl;
+    vector<ll> v;
+    ll l1, r1, l2, r2,left=0,right=0;
+    cin >> l1 >> r1 >> l2 >> r2;
+    if (l2 > r1 || l1>r2)
+    {
+        cout << "-1" << endl;
+        return;
+    }
+    cout << max(l2,l1) << " " << min(r1,r2) << endl;
 }
 
 //===========MAIN BEGIN===========
@@ -36,11 +36,8 @@ void solve()
 int main()
 {
     _
-        ll test;
-    cin >> test;
-    while (test--)
-    {
-        solve();
-    }
+
+    solve();
+
     return 0;
 }

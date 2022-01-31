@@ -20,27 +20,22 @@ using namespace std;
 
 void solve()
 {
-    ll n, s = 1, p = 1;
-    cin >> n;
-    while (n > p*2)  p = p* 2;
-
-    for (int i = n - 1; i >= p;i--)
-        cout << i << " ";
-    for (int i = 0; i < p;i++)
-        cout << i << " ";
-    cout << endl;
+    char c;
+    ll n;
+    cin >> c >> n;
+    ll a[n];
+    fl(i, n) cin >> a[i];
+    fl(i, n)
+    {
+        fl(j, a[i]) cout << c;
+        cout << endl;
+    }
 }
 
 //===========MAIN BEGIN===========
 
 int main()
 {
-    _
-        ll test;
-    cin >> test;
-    while (test--)
-    {
-        solve();
-    }
+    _ solve();
     return 0;
 }

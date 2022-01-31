@@ -20,15 +20,23 @@ using namespace std;
 
 void solve()
 {
-    ll n, s = 1, p = 1;
-    cin >> n;
-    while (n > p*2)  p = p* 2;
+    long double hc, dc, hm, dm, k, w, a;
+    cin >> hc >> dc >> hm >> dm >> k >> w >> a;
+    double rcm = 0, rmc = 0, r1 = 0, r11 = 0, r2 = 0, r22 = 0;
 
-    for (int i = n - 1; i >= p;i--)
-        cout << i << " ";
-    for (int i = 0; i < p;i++)
-        cout << i << " ";
-    cout << endl;
+    for (int i = 0; i <= k; i++)
+    {
+       double h = hc + (i * a);
+        double d= dc + ((k - i) * w);
+        rcm = ceil(h / dm);
+        rmc = ceil(hm / d);
+        if (rcm >= rmc)
+        {
+            cout << "YES" << endl;
+            return;
+        }
+    }
+    cout << "NO" << endl;
 }
 
 //===========MAIN BEGIN===========
