@@ -18,24 +18,15 @@ bool satisfyEq(double m, double x)
     return false;
 }
 
-void solve()
-{
-    double c;
-    cin >> c;
+void solve(){
+    double c; cin >> c;
     double l = 0.0, h = c, m, ans = 0;
-
-    for (int i = 0; i < 100; i++)
-    { 
+    for (int i = 0; i < 100; i++) { 
         m = (l + h) / 2;
-    
-        if (satisfyEq(m, c))
-            l = m;
-        else
-            h = m;
-    }
-    cout << setprecision(20) << l << endl;
+        if (satisfyEq(m, c))  l = m;
+        else h = m;
+    } cout << setprecision(20) << l << endl;
 }
-
 //===========MAIN BEGIN===========
 
 int main()

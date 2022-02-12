@@ -8,16 +8,36 @@
 #define pi 3.141592653589793238
 #define sortall(v) sort(v.begin(),v.end())
 #define sortrev(v) sort(v.end(),v.begin())
+#define mod 1000000007
 using namespace std;
 
+bool isperfectsq(ll n){
+    ll x = (sqrt(n));
+    if(x*x==n)
+        return true;
+    return false;
+}
+
 void solve(){
-    ll n,a,b;
+    ll n,product=1, perfectsquarecount = 0,even=0,odd=0;
     cin >> n;
-    vector<pair<int, int> > vp;
+    vector<ll> v;
     fl(i,n){
-        cin >> a >> b;
-        vp.pb(make_pair(a, b));
+        ll x;
+        cin >> x;
+        ll pow = log(x) / log(2);
+        v.pb(pow);
     }
+    // if (isperfectsq(x))
+    //     perfectsquarecount++;
+    // ll ans = pow(2, n) - 1;
+    // ans = ans % mod;
+    // cout << ans << endl;
+    fl(i, v.size()) {
+             if(v[i]%2==0) even++;
+       else odd++;
+    }
+    odd = odd / 2;
     
 }
 
@@ -25,6 +45,9 @@ void solve(){
 
 int main(){ _ fs
 ll test;
-solve();
-return 0;
+ cin>>test;
+ while(test--){
+     solve();
+}
+ return 0;
  }
