@@ -13,9 +13,7 @@ using namespace std;
 // Binary search for REAL numbers
 bool satisfyEq(double m, double x)
 {
-    if ((abs(x - (pow(m, 2) + sqrt(m))) / x) <= pow(10, -6))
-        return true;
-    return false;
+        return (m*m) + sqrt(m) <= x;
 }
 
 void solve(){
@@ -23,7 +21,7 @@ void solve(){
     double l = 0.0, h = c, m, ans = 0;
     for (int i = 0; i < 100; i++) { 
         m = (l + h) / 2;
-        if (satisfyEq(m, c))  l = m;
+        if (satisfyEq(m, c))l = m;
         else h = m;
     } cout << setprecision(20) << l << endl;
 }

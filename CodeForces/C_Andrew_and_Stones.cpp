@@ -14,7 +14,7 @@ void solve()
 {
     ll n;
     cin >> n;
-    ll a[n], countodd = 0, counteven = 0, toteven = 0, totodd = 0, ans = 0, c = 0;
+    ll a[n],countodd = 0, counteven = 0, toteven = 0, totodd = 0, ans = 0, c = 0;
     for (ll j = 0; j < n; j++){
         cin >> a[j];
     }
@@ -25,14 +25,14 @@ void solve()
 
     for (ll j = 1; j < n - 1; j++)
     {
-        if (a[j] % 2 == 0)  counteven++;
-        else  countodd++;
+        if (a[j]  >= 2)
+            c++;
     }
     for (ll j = 1; j < n - 1; j++)
     {
-        if (a[j] % 2 == 0)
+        if (a[j] % 2 == 0 && a[j]>=2)
             ans += (a[j] / 2);
-        if (a[j] % 2 == 1 && counteven > 0)
+        if (a[j] % 2 == 1 && c > 0)
             ans += ((a[j] + 1) / 2);
     }
     if (ans == 0)
