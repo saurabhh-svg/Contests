@@ -14,14 +14,11 @@ void solve(){
     ll n,x;
     cin >> n;
     vector<int> v(n), vs(n);
-    fl(i, n){
-        cin >> x;
-        v.pb(x);
-    }
+    fl(i, n) cin>>v[i];
     vs = v;
     sortall(vs);
     if(v==vs){
-        cout << "YES" << endl;
+        cout << "Yes" << endl;
         return;
     }
     for (int i = 0; i <n;i++){
@@ -30,10 +27,8 @@ void solve(){
                 swap(v[i], v[j]);
         }
     }
-    if(v==vs)
-        cout << "YES" << endl;
-        else
-            cout << "NO" << endl;
+    if(v==vs) cout << "Yes" << endl;
+        else cout << "No" << endl;
 }
 
 //===========MAIN BEGIN===========

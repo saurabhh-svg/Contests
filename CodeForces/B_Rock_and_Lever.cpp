@@ -12,22 +12,26 @@ using namespace std;
 
 void solve()
 {
-    ll n, ans = 0;
+    ll n;
     cin >> n;
-    ll a[n];
-    for (int i = 0; i < n; i++)
-        cin >> a[i];
-    for (int i = 0; i < n; i++)
+    ll a[n], count = 0,ans=0;
+    fl(i, n) cin >> a[i];
+    vector<bool> istaken(n, false);
+    // Maximum 32 bit is binary representation
+    // Iterating from Left to right to check for set bits
+    // counting pairs using n(n-1)/2
+
+    for (int i = 31; i >= 0; i--)
     {
-        for (int j = i; j < n; j++)
+        count = 0;
+        for (int j = 0; j < n; j++)
         {
-            ans += j - i + 1;
-            for (int k = i; k <= j; k++)
-            {
-                if (a[k] == 0)
-                    ans++;
+            if ((a[j] & (1 << i)) && (istaken[j] == false)){
+                count++;
+            istaken[j] = true;
             }
         }
+        ans += count * (count - 1) / 2;
     }
     cout << ans << endl;
 }

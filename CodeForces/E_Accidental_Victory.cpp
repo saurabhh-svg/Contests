@@ -12,24 +12,27 @@ using namespace std;
 
 void solve()
 {
-    ll n, ans = 0;
+    ll n, low = 0, sum = 0;
     cin >> n;
-    ll a[n];
-    for (int i = 0; i < n; i++)
-        cin >> a[i];
-    for (int i = 0; i < n; i++)
+    pair<int, int> a[n];
+    vector<int> v;
+    fl(i, n)
     {
-        for (int j = i; j < n; j++)
-        {
-            ans += j - i + 1;
-            for (int k = i; k <= j; k++)
-            {
-                if (a[k] == 0)
-                    ans++;
-            }
-        }
+        cin >> a[i].first;   // tokens
+        a[i].second = i + 1; // indexes
     }
-    cout << ans << endl;
+    sort(a, a + n); // sorting tokens to apply binary searach
+
+    sum = a[0].first;
+    for (int i = 1; i < n;i++){
+        if(sum<a[i].first) low = i;
+        sum += a[i].first;
+    }
+        for (int i = low; i < n; i++)  v.pb(a[i].second);
+    sortall(v);
+    cout << v.size() << endl;
+    fl(i, v.size()) cout << v[i] << " ";
+    cout << endl;
 }
 
 //===========MAIN BEGIN===========
