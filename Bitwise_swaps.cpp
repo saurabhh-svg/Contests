@@ -13,30 +13,29 @@ using namespace std;
 void solve(){
     ll n,x;
     cin >> n;
-    vector<int> v(n), vs(n);
-    fl(i, n) cin>>v[i];
-    vs = v;
-    sortall(vs);
-    if(v==vs){
-        cout << "Yes" << endl;
-        return;
+    vector<pair<int, bool> > v(n);
+    fl(i, n){
+        cin >> x;
+        v.pb((make_pair(x, true)));
     }
-    for (int i = 0; i <n;i++){
-        for (int j = i;j < n; j++){
-            if(((v[i]&v[j])>0) && v[i]>v[j])
-                swap(v[i], v[j]);
+
+for (int i = 1; i < 32;i++){
+    for (int j = 0; j < n;j++){
+        if (v[i].first & (1 <<i )){
+             
         }
     }
-    if(v==vs) cout << "Yes" << endl;
-        else cout << "No" << endl;
+}
 }
 
-//===========MAIN BEGIN===========
+    //===========MAIN BEGIN===========
 
-int main(){ _ fs
-ll test;
- cin>>test;
- while(test--)
-solve();
-return 0;
- }
+    int main()
+    {
+        _ fs
+            ll test;
+        cin >> test;
+        while (test--)
+            solve();
+        return 0;
+    }
