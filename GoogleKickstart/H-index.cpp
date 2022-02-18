@@ -1,53 +1,59 @@
 #include <bits/stdc++.h>
-#include <unordered_map>
-#define _ ios_base::sync_with_stdio(0);
-#define fs cin.tie(0);
-#define ll long long int
-#define pb push_back
-#define fl(i, n) for (int i = 0; i < n; i++)
-#define pi 3.141592653589793238
-#define sortall(v) sort(v.begin(), v.end())
-#define sortrev(v) sort(v.end(), v.begin())
 using namespace std;
 
-void solve(int t)
+string FindBoardStatus(int size, vector<string> v)
 {
-    ll n,mx;
-    cin >> n;
-    map<int, int> umap;
-    int s;
-    int a[n];
-
-    for (int j = 0; j < n; j++)
+  int flagblue = 0, flagred = 0;
+  // TODO: Complete this function to find the status of the board.
+  for (int i = 1; i < size - 1; i++)
+  {
+    int blue = 0;
+    for (int j = 0; j < size; j++)
     {
-        cin >> a[j];
+      if (v[i][j] == 'B')
+        blue++;
     }
-        for (int j = 0; j < n; j++)
-        {
-            umap[a[j]]++;
-            int res = 1;
-            int sum = 0;
-            cout << "Case #" << t << ": ";
-            for (auto it = umap.rbegin(); it != umap.rend(); it++)
-            {
-                sum = sum + (it->second);
-                res = max(res, min(sum, it->first));
-            }
-            cout << res << " ";
-        }
-        cout << endl;
-
-        cout << endl;
+    if (blue == size)
+      flagblue++;
+  }
+  for (int i = 0; i < size; i++)
+  {
+    int red = 0;
+    for (int j = 0; j < size; j++)
+    {
+      if (v[j][i] == 'R')
+        red++;
     }
-
-//===========MAIN BEGIN===========
+    if (red == size)
+      flagred++;
+  }
+ // cout << flagblue << " " << flagred << endl;
+  if (flagblue > 0 && flagred == 0)
+    return "Blue wins";
+  if (flagblue == 0 && flagred > 0)
+    return "Red wins";
+  if (size == 1 && flagblue==0 && flagred==0)
+    return "Nobody wins";
+  return "Impossible";
+}
 
 int main()
 {
-    _ fs
-        ll test;
-    cin >> test;
-    for (int i = 1; i <= test; i++)
-        solve(i);
-    return 0;
+  int t;
+  cin >> t;
+  string s;
+  for (int tc = 1; tc <= t; ++tc)
+  {
+    int n;
+    cin >> n;
+    vector<string> v;
+    for (int r = 0; r < n; ++r)
+    {
+      cin >> s;
+      v.push_back(s);
+    }
+
+    cout << "Case #" << tc << ": " << FindBoardStatus(n, v) << endl;
+  }
+  return 0;
 }
