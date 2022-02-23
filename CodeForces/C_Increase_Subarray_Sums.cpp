@@ -9,51 +9,35 @@
 #define sortrev(v) sort(v.end(), v.begin())
 using namespace std;
 
-int summ(int a[], int st, int end)
-{
-    int sum = 0;
-    for (int j = st; j <= end; j++)
-    {
-        sum = sum + a[j];
-    }
-    return sum;
-}
 void solve()
 {
     int n, x;
     cin >> n >> x;
     int a[n];
-    for (int j = 0; j < n; j++)
-        cin >> a[j];
-    unordered_map<int, int> umap;
-    for (int j = 0; j <= n; j++)
-        umap[j] = -1000000;
-    for (int j = 0; j < n; j++)
+    fl(i, n) cin >> a[i];
+    vector<int> ans(n + 1, INT_MIN);
+    ans[0] = 0; // sum of subarray of length 0
+
+    for (int i = 0; i < n; i++)
     {
         int sum = 0;
-        for (int k = j; k < n; k++)
+        for (int j = i; j < n; j++)
         {
-            sum = sum + a[k];
-            umap[k - j + 1] = max(sum, umap[k - j + 1]);
+            sum += a[j];
+            ans[j - i + 1] = max(ans[j - i + 1], sum);
+            // storing maximum sum of a subarray of a particular length
         }
     }
-    // for(int j=0;j<=n;j++)cout<<umap[j]<<" ";
-    umap[0] = 0;
-    int prev = 0;
-    for (int j = 0; j <= n; j++)
-    {
-        int maxi = -10000000;
-        for (int k = j; k <= n; k++)
-        {
-            maxi = max(maxi, umap[k]);
-        }
 
-        if (maxi + (j * x) >= prev)
+        for (int i = 0; i <= n; i++)
         {
-            prev = maxi + (j * x);
+            int ans1 = 0;
+            for (int k = 0; k <= n; k++)
+            {
+                ans1 = max(ans1, (min(i,k) * x + ans[k]));
+            }
+            cout << ans1 << " ";
         }
-        cout << prev << " ";
-    }
     cout << endl;
 }
 
