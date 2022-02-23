@@ -22,33 +22,23 @@ void solve()
             blue = 1;
         if (s[i] == 'g')
             green = 1;
-        if (s[i] == 'R' && red == 0)
+        if ((s[i] == 'R' && red == 0) || (s[i] == 'G' && green == 0) || (s[i] == 'B' && blue == 0))
         {
             cout << "NO" << endl;
             return;
         }
-        if (s[i] == 'G' && green == 0)
-        {
-            cout << "NO" << endl;
-            return;
-        }
-        if (s[i] == 'B' && blue == 0)
-        {
-            cout << "NO" << endl;
-            return;
-        }
+        cout << "YES" << endl;
     }
-    cout << "YES" << endl;
 }
 
-//===========MAIN BEGIN===========
+    //===========MAIN BEGIN===========
 
-int main()
-{
-    _ fs
-        ll test;
-    cin >> test;
-    while (test--)
-        solve();
-    return 0;
-}
+    int main()
+    {
+        _ fs
+            ll test;
+        cin >> test;
+        while (test--)
+            solve();
+        return 0;
+    }

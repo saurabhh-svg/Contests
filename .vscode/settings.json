@@ -28,7 +28,9 @@
     "span": "cpp",
     "string_view": "cpp",
     "unordered_set": "cpp",
-    "utility": "cpp"
+    "utility": "cpp",
+    "numeric": "cpp",
+    "iosfwd": "cpp"
   },
   "C_Cpp.errorSquiggles": "Disabled"
 }

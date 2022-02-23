@@ -9,8 +9,7 @@
 #define sortrev(v) sort(v.end(), v.begin())
 using namespace std;
 
-void solve()
-{
+void solve(){
     int n, x;
     cin >> n >> x;
     int a[n];
