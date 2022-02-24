@@ -1,0 +1,1 @@
+{"name":"Local: Non_Comprime_Neighbours","url":"/Users/mymac/Desktop/Contests/CodeChef/Non_Comprime_Neighbours.cpp","tests":[{"id":1645688432632,"input":"2\n3\n6 12 5\n3\n5 5 5","output":"2\n3\n6 12 5\n3\n5 5 5"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/mymac/Desktop/Contests/CodeChef/Non_Comprime_Neighbours.cpp","group":"local","local":true}

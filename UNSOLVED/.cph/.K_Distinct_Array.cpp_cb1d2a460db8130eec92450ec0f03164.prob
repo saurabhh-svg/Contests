@@ -1,0 +1,1 @@
+{"name":"Local: K_Distinct_Array","url":"/Users/mymac/Desktop/Contests/UNSOLVED/K_Distinct_Array.cpp","tests":[{"id":1645689893418,"input":"3\n5 5\n5 15\n5 7","output":"1 1 1 1 1\n1 2 3 4 5\n1 2 2 1 1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/mymac/Desktop/Contests/UNSOLVED/K_Distinct_Array.cpp","group":"local","local":true}

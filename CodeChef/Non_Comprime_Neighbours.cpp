@@ -4,42 +4,38 @@
 #define fs cin.tie(0);
 #define ll long long int
 #define pb push_back
-#define fl(i,n) for(int i=0;i<n;i++)
-#define sortall(v) sort(v.begin(),v.end())
-#define sortrev(v) sort(v.end(),v.begin())
+#define fl(i, n) for (int i = 0; i < n; i++)
+#define sortall(v) sort(v.begin(), v.end())
+#define sortrev(v) sort(v.end(), v.begin())
 using namespace std;
 
 void solve()
 {
-    ll n,t=0,th=0;
+    ll n;
     cin >> n;
     vector<int> v(n);
-    fl(i, n) {
-        cin >> v[i];
-        if (v[i] % 2 == 0)
-            t++;
-        if(c[i]%3==0)
-            th++;
-    }
+    fl(i, n) cin >> v[i];
+    for (int i = 1; i < n; i = i + 3)
+    {
+        v[i - 1] = 2 * v[i];
+        if (i + 1< n ) v[i + 1] = 2 * v[i];
 
-    for (int i = 0; i < n; i++) {
-        if(v[i]%2==0 && v[i+1]%2==1)  v[i + 1] = v[i + 1] * 2;
-        if(v[i]%2==1 && v[i+1]%2==0)
-            v[i + 1] = v[i + 1] * 2;
+        if (n % 3 == 1)
+            v[n - 1] = 2;
     }
 
     fl(i, n) cout << v[i] << " ";
     cout << endl;
 }
 
-    //===========MAIN BEGIN===========
+//===========MAIN BEGIN===========
 
-    int main()
-    {
-        _ fs
-            ll test;
-        cin >> test;
-        while (test--)
-            solve();
-        return 0;
- }
+int main()
+{
+    _ fs
+        ll test;
+    cin >> test;
+    while (test--)
+        solve();
+    return 0;
+}

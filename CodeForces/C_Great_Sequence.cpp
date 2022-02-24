@@ -13,27 +13,31 @@ void solve()
 {
     ll n, x, temp = 0, ans = 0;
     cin >> n >> x;
-    vector<int> v(n);
-    unordered_map<int, int> mp;
+    vector<ll> v(n);
+    map<ll, ll> mp;
     fl(i, n)
     {
         cin >> v[i];
         mp[v[i]]++;
     }
     sortall(v);
-    for (int i = 0; i < n; i++){
-        if(mp[v[i]]!=0){
+    for (int i = 0; i < n; i++)
+    {
+        if (mp[v[i]] > 0)
+        {
             temp = v[i] * x;
-        if (mp[temp] == 0)  {
-            ans++;
-            mp[v[i]]--;
+            if (mp[temp] == 0)
+            {
+                ans++;
+                mp[v[i]]--;
+            }
+            else
+            {
+                mp[temp]--;
+                mp[v[i]]--;
+            }
         }
-        else{
-            mp[temp]--;
-            mp[v[i]]--;
-        }
-        }
-        }
+    }
     cout << ans << endl;
 }
 
