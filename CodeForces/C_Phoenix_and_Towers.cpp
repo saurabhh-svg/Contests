@@ -11,28 +11,26 @@
 using namespace std;
 
 void solve(){
-    int n, m, x;
-    cin >> n >> m >> x;
-    pair<int,int> p[n];
-    fl(i, n) {
-        cin>>p[i].first;
-        p[i].second = i + 1;
+    int n, m, l;
+    cin >> n >> m >> l;
+    vector<int> v,c;
+    for (int i = 0; i < m; i++) {
+        int x;
+        cin >> x;
+        v.push_back(i + 1); //index vector 
+        c.push_back(x); //height vector
     }
-    sort(p,p+n); //sorting on basis of height
-
-    set <pair<int,int> > s;
-    for (int i = 0; i < m;i++){
-        pair<int,int> x = make_pair(0,i);
-        s.insert(x); //inserting all indexes
+    for (int i = 0; i < n - m; i++) {
+        int x;
+        cin >> x;
+      int y = min_element(c.begin(), c.end()) - c.begin();
+        v.push_back(y + 1);
+        c[y] += x;
     }
-    for (int i = 0; i < n;i++){
+    cout << "YES" << endl;
+    for (int i = 0; i < n; i++)  cout << v[i] << " ";
 
-    }
-
-    // to store current height of towers and their number
-
-    // set automatically arranges its values in ascending order
-
+    cout << endl;
 }
 
 //===========MAIN BEGIN===========
