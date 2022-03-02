@@ -9,7 +9,7 @@
 #define sortrev(v) sort(v.end(), v.begin())
 using namespace std;
 ll mod = 1e9 + 7, ans = 0;
-ll factorial(int n)
+ll factorial(ll n)
 {
     if (n == 0)
         return 1;
@@ -18,7 +18,7 @@ ll factorial(int n)
 
 void solve()
 {
-    int n, f = 0;
+    ll n, f = 0;
     cin >> n;
     vector<int> a(n);
     fl(i, n) cin >> a[i];
@@ -40,7 +40,7 @@ void solve()
     // fC2 * 2 = f(f-1)
     //  f(f-1)c* (n-2)!
     ll fact = factorial(n - 2) % mod;
-   ll pos = f * (f - 1) % mod;
+   ll pos = ((f %mod) * (f - 1) % mod)%mod;
     ans = fact * pos  % mod;
     cout << ans << endl;
 }
