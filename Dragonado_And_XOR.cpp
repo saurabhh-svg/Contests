@@ -8,17 +8,20 @@
 #define sortall(v) sort(v.begin(),v.end())
 #define sortrev(v) sort(v.end(),v.begin())
 using namespace std;
-ll fa[15] = {0};
-
-void fact(ll n)
-{
-    fa[0] = 1;
-    for (int i = 1; i <= 15; i++) fa[i] = fa[i-1] * i;
-}
 
 void solve(){
-    ll n; cin >> n;
-    if(n)
+ll n;
+cin >> n;
+vector<ll> v(n);
+unordered_map<ll, ll> mp;
+fl(i, n)  cin >> v[i];
+   
+
+
+
+
+
+
 }
 
 //===========MAIN BEGIN===========
