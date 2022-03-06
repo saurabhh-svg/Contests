@@ -11,29 +11,24 @@ using namespace std;
 
 void solve()
 {
-    ll a, b, ans1 = 0, ans2 = 0, ans = 0;
-    cin >> a >> b;
-    ans = b - a; // b>a always
+    ll n, c;
+    cin >> n >> c;
+    vector<ll> v(n);
+    unordered_map<ll, ll> mp;
 
-    for (int i = 0; i <= ans; i++)
-    {
-        if (((a + i) | b) == b)
-        {
-            ans1 = i + 1;
-            break;
-        }
+    fl(i, n){
+        cin >> v[i];
+        mp[v[i]]++;
     }
-    for (int i = 0; i <=  b; i++)
-    {
-        if (((b + i) | a) == b + i)
-        {
-            ans2 = i + 1;
-            break;
-        }
+    sort(v.begin(),v.end(),greater<int>());
+
+    for(int i=0;i<n;i++)  {
+            if (mp[v[i] / v[i]] == 0 )       {
+                cout << "No" << endl;
+                return;
+            }
     }
-    ans = min(ans1, ans);
-    ans = min(ans, ans2);
-    cout << ans << endl;
+    cout << "Yes" << endl;
 }
 
 //===========MAIN BEGIN===========

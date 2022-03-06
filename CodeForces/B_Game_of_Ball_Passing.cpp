@@ -11,28 +11,23 @@ using namespace std;
 
 void solve()
 {
-    ll a, b, ans1 = 0, ans2 = 0, ans = 0;
-    cin >> a >> b;
-    ans = b - a; // b>a always
-
-    for (int i = 0; i <= ans; i++)
-    {
-        if (((a + i) | b) == b)
-        {
-            ans1 = i + 1;
-            break;
-        }
+    ll n, sum = 0, ans = 1;
+    cin >> n;
+    vector<ll> v(n);
+    fl(i, n) cin >> v[i];
+    sortall(v);
+    for (int i = 0; i < n; i++)
+        sum += v[i];
+    
+    if(sum==0){
+        cout << 0 << endl;
+        return;
     }
-    for (int i = 0; i <=  b; i++)
-    {
-        if (((b + i) | a) == b + i)
-        {
-            ans2 = i + 1;
-            break;
-        }
-    }
-    ans = min(ans1, ans);
-    ans = min(ans, ans2);
+    sum -= v[n - 1];
+    if (sum >= v[n - 1] - 1)
+        ans = 1;
+    else
+        ans =  v[n - 1] - sum ;
     cout << ans << endl;
 }
 

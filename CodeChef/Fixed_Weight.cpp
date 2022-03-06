@@ -19,8 +19,7 @@ void solve()
         if (x % i == 0)
         {
             div = x / i;
-            if (div <= (n-i+1))
-            {
+            if (div <= (n-i+1))  {
                 cout << "YES" << endl;
                 return;
             }
