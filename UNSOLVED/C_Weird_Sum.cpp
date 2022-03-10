@@ -10,6 +10,17 @@
 using namespace std;
 
 void solve(){
+    ll n, m,color;
+    cin >> n >> m;
+   map<ll, vector<ll> > x,y;
+   for (int i = 1; i <= n;i++){
+       for (int j = 1; j <= m;j++)   {
+           cin >> color;
+           x[color].pb(i);
+           x[color].pb(j);
+       }
+    }
+
 
 }
 

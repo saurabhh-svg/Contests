@@ -21,12 +21,14 @@ void solve()
         mp[v[i]]++;
     }
     sort(v.begin(),v.end(),greater<int>());
-
-    for(int i=0;i<n;i++)  {
-            if (mp[v[i] / v[i]] == 0 )       {
+    
+    for(int i=0;i<n;i++){
+        for (int j = i ; j < n;j++)    {
+            if (mp[v[i] / v[j]] == 0 )       {
                 cout << "No" << endl;
                 return;
             }
+        }
     }
     cout << "Yes" << endl;
 }
