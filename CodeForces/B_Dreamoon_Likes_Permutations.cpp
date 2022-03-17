@@ -19,23 +19,30 @@ void solve()
         cout << 0 << endl;
         return;
     }
-    set<ll> l1, l2, l2, righttoleft2;
-    int rem = n - mx;
-    for (int i = 0; i < mx; i++) l1.insert(v[i]);
-    for (int i = mx; i < n; i++)  righttoleft1.insert(v[i]);
-    for (int i = 0; i < rem; i++)  lefttoright2.insert(v[i]);
-    for (int i = rem; i < n; i++) righttoleft2.insert(v[i]);
+    set<ll> l1, l2, l3, l4;
+    ll rem =n- mx;
+    for (ll i = 0; i < mx; i++) l1.insert(v[i]);
+    for (ll i = mx; i < n; i++)  l2.insert(v[i]);
+    for (ll i = 0; i < rem; i++)  l3.insert(v[i]);
+    for (ll i = rem; i < n; i++) l4.insert(v[i]);
     // cout << *--lefttoright1.end() << " " << *--righttoleft1.end() << " " << *--lefttoright2.end() << " " << *--righttoleft2.end() << endl;
 
-    if (lefttoright1.size() == mx && *--lefttoright1.end() == mx &&  righttoleft1.size() == rem && *--righttoleft1.end()==rem)
+    if (l1.size() == mx && *--l1.end() == mx &&  l2.size() == rem && *--l2.end()==rem)
         f1 = 1;
 
-    if (lefttoright2.size() == rem && *--lefttoright2.end() == rem && righttoleft2.size() == mx && *--righttoleft2.end() == mx)
-    
+    if (l3.size() == rem && *--l3.end() == rem && l4.size() == mx && *--l4.end() == mx)
         f2 = 1;
-    cout << f1 + f2 << endl;
-    if (f1) cout << *--lefttoright1.end() << " " << *--righttoleft1.end() << endl;
-    if (f2) cout << *--lefttoright2.end() << " " << *--righttoleft2.end() << endl;
+    if (rem == mx && f1==1 && f2==1)
+    {
+        cout << 1 << endl;
+        cout << *--l1.end() << " " << *--l2.end() << endl;
+    }
+    else
+    {
+        cout << f1 + f2 << endl;
+        if (f1) cout << *--l1.end() << " " << *--l2.end() << endl;
+    if (f2) cout << *--l3.end() << " " << *--l4.end() << endl;
+    }
 }
 
 //===========MAIN BEGIN===========

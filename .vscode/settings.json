@@ -30,7 +30,9 @@
     "unordered_set": "cpp",
     "utility": "cpp",
     "numeric": "cpp",
-    "iosfwd": "cpp"
+    "iosfwd": "cpp",
+    "typeindex": "cpp",
+    "typeinfo": "cpp"
   },
   "C_Cpp.errorSquiggles": "Disabled"
 }
