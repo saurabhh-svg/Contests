@@ -30,7 +30,7 @@ void solve()
     if (avg < 0)
         cout << double(0) << endl;
     else
-        cout<<fixed <<setprecision(20)<<avg << endl;
+        cout<<fixed <<setprecision(8)<<avg << endl;
 }
 
 //===========MAIN BEGIN===========
