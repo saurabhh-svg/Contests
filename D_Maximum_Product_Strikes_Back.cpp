@@ -10,12 +10,31 @@
 using namespace std;
 
 void solve(){
-ll n; 
-cin >> n;
-vector<ll> v(n);
-fl(i, n) cin >> v[i];
-
-
+    ll n,cl=0,cr=0,neg=0,zero=0;
+    cin >> n;
+    vector<int> v(n);
+    fl(i, n){
+        cin >> v[i];
+       if(v[i]<0)  neg++;
+           if(v[i]==0)  zero++;
+    }
+    if(neg%2==0 && zero==0){
+        cout << 0 << " " << 0 << endl;
+        return;
+    }
+    
+    ll l = 0, r = n - 1;
+    while (l<r){
+        if(v[l]<=0 ){
+            cl++;
+        l++;
+    }
+    if(v[r]<=0){
+        cr++;
+        r++;
+    }
+    
+    }
 }
 
 //===========MAIN BEGIN===========

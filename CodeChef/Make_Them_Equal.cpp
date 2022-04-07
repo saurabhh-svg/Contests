@@ -9,13 +9,32 @@
 #define sortrev(v) sort(v.begin(),v.end(),greater<ll>())
 using namespace std;
 
-void solve(){
-ll n; 
-cin >> n;
-vector<ll> v(n);
-fl(i, n) cin >> v[i];
-
-
+void solve()
+{
+    ll n,e=0,o=0,ans=0;
+    cin >> n;
+    vector<ll> v(n),vv;
+    fl(i, n){
+        cin >> v[i];
+        if(v[i]%2==0)   e++;
+        else
+            o++;
+    }
+if(e==0 || e==n){
+    cout << 0 << endl;
+    return;
+}
+if(o%2==0){
+    if(o/2<=e){
+        ans = o / 2;
+        cout << ans << endl;
+    }else{
+        cout << e << endl;
+    }
+}else{
+    ans = e;
+    cout << ans << endl;
+}
 }
 
 //===========MAIN BEGIN===========

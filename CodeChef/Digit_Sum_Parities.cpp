@@ -9,20 +9,26 @@
 #define sortrev(v) sort(v.begin(), v.end(), greater<ll>())
 using namespace std;
 
-void solve(){
-    string s; cin >> s;
-    ll n = s.length(), ans = 0;
-    set<char> se;
-    fl(i, n) {
-        if (se.find(s[i]) == se.end())  se.insert(s[i]);
-        else{
-           se.erase(s[i]);
-           ans += se.size();
-           se.clear();
-       }
-   }
-   ans += se.size();
-   cout << ans << endl;
+void solve()
+{
+    ll n, m, s = 0,temp=0;
+    cin >> n;
+    m = n;
+    while (m > 0){
+        s += m % 10;
+        m /= 10;
+    }
+    m = n + 1;
+    while(m>0){
+        temp += m % 10;
+        m /= 10;
+    }
+    if(temp%2!=s%2)
+        cout << n + 1 << endl;
+    else
+        cout << n + 2 << endl;
+
+   
 }
 
 //===========MAIN BEGIN===========
