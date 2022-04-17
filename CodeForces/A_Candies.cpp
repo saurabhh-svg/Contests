@@ -10,7 +10,18 @@
 using namespace std;
 
 void solve(){
-   
+    ll n,temp=0,ans=0;
+    cin >> n;
+    ll k = log(n) + 1;
+   // cout << k<<endl;
+    for (int i = 2; i < 30;i++){
+        temp = pow(2, i)-1;
+        if (n%temp==0){
+            ans = n / temp;
+            break;
+        }
+    }
+    cout << ans << endl;
 }
 
 //===========MAIN BEGIN===========

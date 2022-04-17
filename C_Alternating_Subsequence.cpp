@@ -10,7 +10,17 @@
 using namespace std;
 
 void solve(){
-   
+ll n,sum=0,temp=0;
+cin >> n;
+vector<ll> v(n),ans;
+fl(i, n) cin >> v[i];
+int i = 0;
+while (i < n - 1){
+    if(v[i]>0 && v[i+1]>0){
+        temp = max(v[i], v[i + 1]);
+        while(j<n)
+    }
+}
 }
 
 //===========MAIN BEGIN===========
