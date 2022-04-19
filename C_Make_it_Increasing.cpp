@@ -10,15 +10,27 @@
 using namespace std;
 
 void solve(){
-   
+    ll n,mx,mn,ans=0;
+    cin >> n;
+    vector<ll> v(n),temp(n);
+    fl(i, n) cin >> v[i];
+    temp = v;
+    sortall(temp);
+    if(temp==v) {
+        cout << n - 1 << endl;
+        return;
+    }
+    mx = v[n - 1]; mn = v[0];
+    fl(i,n){
+       if(v[i]<(-mx)){
+           ans += (v[i]-mn);
+       }
+    }
 }
 
 //===========MAIN BEGIN===========
 
 int main(){ _ fs
-ll test;
- cin>>test;
- while(test--)
 solve();
 return 0;
  }
