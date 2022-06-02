@@ -9,34 +9,36 @@
 #define sortrev(v) sort(v.begin(), v.end(), greater<ll>())
 using namespace std;
 
-void solve()
-{
-    string s;  cin >> s;
-    int l = s.size();
-    if (l < 2 || s[l - 2] != s[l - 1] || s[0] != s[1])
-    {
-        cout << "NO" << endl;
-        return;
-    }
-    for (int i = 1; i < l - 1; i++)
-    {
-        if (s[i] != s[i - 1] && s[i] != s[i + 1])
-        {
-            cout << "NO" << endl;
-            return;
-        }
-    }
-    cout << "YES" << endl;
-}
 
 //===========MAIN BEGIN===========
+
+void sol(){
+    ll n, k;
+    cin >> n >> k;
+    if (k == 1)
+    {
+        if (n % 2 == 0)
+            cout << "EVEN" << endl;
+        else
+            cout << "ODD" << endl;
+    }
+    else if (k == 2)
+        cout << "ODD" << endl;
+    else
+        cout << "EVEN" << endl;
+}
 
 int main()
 {
     _ fs
         ll test;
     cin >> test;
+    ll mod = 1e9;
     while (test--)
-        solve();
+    {
+
+        sol();
+    }
+
     return 0;
 }

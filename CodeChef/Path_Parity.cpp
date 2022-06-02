@@ -11,22 +11,25 @@ using namespace std;
 
 void solve()
 {
-    string s;  cin >> s;
-    int l = s.size();
-    if (l < 2 || s[l - 2] != s[l - 1] || s[0] != s[1])
-    {
-        cout << "NO" << endl;
+    ll n, k;
+    cin >> n >> k;
+    if (n == 1){
+        if(k==0)
+        cout << "No\n";
+        else
+            cout << "Yes\n";
         return;
     }
-    for (int i = 1; i < l - 1; i++)
+    if (n == 2 )
     {
-        if (s[i] != s[i - 1] && s[i] != s[i + 1])
-        {
-            cout << "NO" << endl;
-            return;
-        }
+        cout << "Yes\n";
+        return;
     }
-    cout << "YES" << endl;
+if(n%2==1 && k%2==0)
+    cout << "No\n";
+else
+    cout << "Yes\n";
+
 }
 
 //===========MAIN BEGIN===========
