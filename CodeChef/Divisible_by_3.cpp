@@ -13,17 +13,9 @@ void solve()
 {
     ll a, b, aa, bb, ans = 0;
     cin >> a >> b;
-    if(a%3==0 || b%3==0){
-        cout << 0 << endl;
-        return;
-    }
-    if(a==b){
-        cout << 1 << endl;
-        return;
-    }
-    ll diff = abs(a - b);
-    diff = diff % 3;
-    cout << diff << endl;
+    if(a%3==0 || b%3==0) cout << 0 << endl;
+   else  if(a%3==b%3) cout << 1 << endl;
+   else   cout << 2 << endl;
 }
 
 //===========MAIN BEGIN===========

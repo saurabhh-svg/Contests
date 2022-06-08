@@ -15,18 +15,21 @@ void solve()
     cin >> n;
     string s;
     cin >> s;
-    n = n - 1;
-    if (n == 1){
+    if (n == 2){
         cout << 1 << endl;
         return;
     }
-    if(s[n-1]=='0' || s[n-1]=='1') ans++;
+  
+        if (s[0] == '1') ans++;
+        if (s[n - 2] == '0') ans++;
 
-    if (s[0] == '1' )  ans++;
+        for (int i = 0; i < n - 1; i++){
+            if (s[i] == '0' and s[i + 1] == '1')
+                ans++;
+        }
 
-    
-    cout << ans << endl;
-}
+        cout << ans << endl;
+    }
 
 //===========MAIN BEGIN===========
 
