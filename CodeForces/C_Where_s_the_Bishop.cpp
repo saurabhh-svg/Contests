@@ -15,16 +15,23 @@ cin.tie(0);
 ll test;cin>>test;
 while(test--)
 {
-    ll n;
-    cin >> s;
-    string s, t,ans;
-    cin >> s >> t;
-    if(s==t)
-        ans = "YES";
-        else{
-
+    int x, y;
+    vector<string> s;
+    string str;
+    fl(i, 8)  {
+        cin >> str;
+        s.pb(str);
+    }
+    for (int i = 1; i <= 6;i++){
+        for (int j = 1; j < 7;j++){
+            if ((s[i][j] == '#' && s[i - 1][j - 1] == '#' && s[i - 1][j + 1] == '#') || s[i][j] == '#' && s[i+ 1][j - 1] == '#' && s[i +1][j + 1] == '#'){
+                x = i + 1;
+                y = j + 1;
+            }
+            
         }
-        cout << ans << "\n";
+    }
+        cout << x << " " << y << endl;
 }
 return 0;
  }
