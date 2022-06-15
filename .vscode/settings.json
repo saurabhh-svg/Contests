@@ -33,7 +33,8 @@
     "iosfwd": "cpp",
     "typeindex": "cpp",
     "typeinfo": "cpp",
-    "memory": "cpp"
+    "memory": "cpp",
+    "stack": "cpp"
   },
   "C_Cpp.errorSquiggles": "Disabled"
 }
