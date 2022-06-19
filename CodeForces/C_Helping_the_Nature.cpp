@@ -8,25 +8,28 @@
 using namespace std;
 using namespace __gnu_pbds;
 void solve(){
-    int n,sum=0,ans=0;
-    cin >> n;
+    int n,ans=0;  cin >> n;
     vector<int> v(n);
-    fl(i, n) {
-        cin >> v[i];
-        sum += v[i];
+    fl(i, n) cin >> v[i];
+    int mx = v[0],ops=0;
+    //left to right
+    for (int i = 1; i < n;i++){
+        v[i] -= ops;
+        if (v[i]>mx)  ops += v[i]-mx;
+        else  mx = v[i];
+        v[i] = mx;
     }
-    while(sum!=0){
-        int mn = *min_element(v.begin(), v.end());
-        if(mn<0){
-            mn = -mn;
-            fl(i, n) v[i] += mn;
-            sum += mn*n;
-        }
-        else
-        {
-            
-        }
+    mx = v[n - 1];
+    ans += ops;
+    ops = 0;
+    for (int i = n - 1; i >= 0; i--){
+        v[i] -= ops;
+        if (v[i] > mx)  ops += v[i] - mx;
+        v[i] = mx;
     }
+    ans += ops;
+    ans += abs(v[0]);
+    cout << ans << endl;
 }
 
 signed main(){
