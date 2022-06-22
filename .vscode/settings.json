@@ -34,7 +34,8 @@
     "typeindex": "cpp",
     "typeinfo": "cpp",
     "memory": "cpp",
-    "stack": "cpp"
+    "stack": "cpp",
+    "chrono": "cpp"
   },
   "C_Cpp.errorSquiggles": "Disabled"
 }
