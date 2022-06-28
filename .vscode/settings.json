@@ -36,7 +36,19 @@
     "memory": "cpp",
     "stack": "cpp",
     "chrono": "cpp",
-    "limits": "cpp"
+    "limits": "cpp",
+    "__mutex_base": "cpp",
+    "__node_handle": "cpp",
+    "fstream": "cpp",
+    "ios": "cpp",
+    "istream": "cpp",
+    "optional": "cpp",
+    "sstream": "cpp",
+    "streambuf": "cpp",
+    "tuple": "cpp",
+    "variant": "cpp",
+    "__functional_03": "cpp",
+    "functional": "cpp"
   },
   "C_Cpp.errorSquiggles": "Disabled"
 }
