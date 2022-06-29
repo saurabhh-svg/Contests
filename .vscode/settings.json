@@ -48,7 +48,8 @@
     "tuple": "cpp",
     "variant": "cpp",
     "__functional_03": "cpp",
-    "functional": "cpp"
+    "functional": "cpp",
+    "bitset": "cpp"
   },
   "C_Cpp.errorSquiggles": "Disabled"
 }
