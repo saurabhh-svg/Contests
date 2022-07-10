@@ -49,7 +49,9 @@
     "variant": "cpp",
     "__functional_03": "cpp",
     "functional": "cpp",
-    "bitset": "cpp"
+    "bitset": "cpp",
+    "atomic": "cpp",
+    "iomanip": "cpp"
   },
   "C_Cpp.errorSquiggles": "Disabled"
 }
