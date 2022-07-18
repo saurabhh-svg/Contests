@@ -7,16 +7,22 @@
 #define ordered_set tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update>
 using namespace std;
 using namespace __gnu_pbds;
-
-void solve(){
-    int n, l, r;
-    vector<int> ans;
-    cin >> n >> l >> r;
-
-   
-    cout << "YES\n";
-    fl(i, ans.size()) cout << ans[i] << " ";
-    cout << endl;
+void solve()
+{
+    int n;
+    string s;
+    cin >> n >> s;
+    vector<char> v, vv;
+    for (int i = 0; i < n; i = i + 2)
+        v.pb(s[i]);
+    for (int i = 1; i < n; i = i + 2)
+        vv.pb(s[i]);
+    sort(v.begin(), v.end());
+    sort(vv.begin(), vv.end());
+    if (v == vv)
+        cout << "YES\n";
+    else
+        cout << "NO\n";
 }
 
 signed main()

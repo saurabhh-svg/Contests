@@ -8,15 +8,22 @@
 using namespace std;
 using namespace __gnu_pbds;
 
-void solve(){
-    int n, l, r;
-    vector<int> ans;
-    cin >> n >> l >> r;
 
-   
-    cout << "YES\n";
-    fl(i, ans.size()) cout << ans[i] << " ";
-    cout << endl;
+    void solve()
+{
+    int n, q;
+    cin >> n >> q;
+    string ans = "";
+    vector<int> a(n),ans;
+    for (int i = 0; i < n; i++) cin >> a[i];
+    for (int i = n - 1; i >= 0;i--){
+        if(a[i]>q){
+            ans.pb(1);
+        }
+    }
+for(auto i:ans)
+    cout << i;
+cout << endl;
 }
 
 signed main()
