@@ -10,22 +10,27 @@ using namespace __gnu_pbds;
 void solve()
 {
     int n, c, q;
+    cin >> n >> c >> q;
     string s;
-    cin >> n >> c >> q >> s;
-    vector<char> ch;
-    fl(i, n) ch.pb(s[i]);
-    int l, r;
-    for (int i = 0; i < c; i++) {
-        cin >> l >> r;
-        for (int j = l - 1; j <= r - 1; j++)
-            ch.pb(ch[j]);
+    cin >> s;
+    vector<int> l(c), r(c), len(c + 1);
+    len[0] = n;
+    for (int i = 0; i < c; i++)
+    {
+        cin >> l[i] >> r[i];
+        len[i + 1] = len[i] + (r[i] - l[i] + 1);
     }
-
     while (q--)
     {
-        int x;
-        cin >> x;
-        cout << ch[x - 1] << "\n";
+        int k;
+        cin >> k;
+        assert(k <= len[c]);
+        for (int i = c - 1; i >= 0; i--)  {
+            if (k > len[i])   k = l[i] + (k - len[i] - 1);
+            
+        }
+        assert(k <= n);
+        cout << s[k - 1] << '\n';
     }
 }
 
