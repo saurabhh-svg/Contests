@@ -51,7 +51,8 @@
     "functional": "cpp",
     "bitset": "cpp",
     "atomic": "cpp",
-    "iomanip": "cpp"
+    "iomanip": "cpp",
+    "type_traits": "cpp"
   },
   "C_Cpp.errorSquiggles": "Disabled"
 }
