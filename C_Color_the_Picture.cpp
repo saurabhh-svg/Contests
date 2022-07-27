@@ -11,30 +11,28 @@ void solve()
 {
     int n, m, k;
     cin >> n >> m >> k;
-    int p[n],mx = INT_MIN;
-
-    for (int i = 0; i < k; i++){
-        cin >> p[i];
-        mx = max(mx, p[i]);
-    }
-    if ((m * n) & 1)
+    int a[k];
+    bool flag1 = false, flag2 = false;
+    for (int i = 0; i < k; i++)   cin >> a[i];
+    int c = 0, cc = 0;
+    for (int i = 0; i < k; i++)
     {
-        if ((m * n) <= mx)
-            cout << "Yes\n";
-        else
-            cout << "No\n";
+        if (a[i] / n > 2) flag1 = 1;
+        if (a[i] / n >= 2) c += a[i] / n;
+    }
+    if (c >= m && (flag1 || m % 2 == 0)) {
+        cout << "Yes" << endl;
         return;
     }
-
-    int c = 0, cc = 0;
-    sort(p,p+k);
-
-    for (int i = k-1; i >=0; i--) {
-        if ((p[i] / n) > 1)  cc += (p[i] / n);
-        if ((p[i] / m) > 1)   c += (p[i] / m);
+    for (int i = 0; i < k; i++){
+        if (a[i] / m > 2)   flag2 = 1;
+        if (a[i] / m >= 2) cc+= a[i] / m;
     }
-    if (c >= n || cc >= m)   cout << "Yes\n";
-    else   cout << "No\n";
+    if (cc >= n && (flag2 || n % 2 == 0)) {
+        cout << "Yes" << endl;
+        return;
+    }
+    cout << "No" << endl;
 }
 
 signed main()
