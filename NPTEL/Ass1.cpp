@@ -7,17 +7,16 @@
 #define ordered_set tree<int, null_type,less<int>, rb_tree_tag,tree_order_statistics_node_update>
 using namespace std;
 using namespace __gnu_pbds;
-void solve(int t){
+void solve(){
     int n;
     cin >> n;
     int ans = n * (n - 1) / 2;
-    cout << ans;
-    if(t>1)  cout << endl;
+    cout << ans << endl;
 }
 
 signed main(){
 ios_base::sync_with_stdio(0);
 cin.tie(0);
 int test;cin>>test;
-for (int i = test; i > 0;i--) solve(i);
+for (int i = test; i > 0;i--) solve();
  }
