@@ -1,0 +1,18 @@
+int getMaximumGreyness(vector <string> pixels){
+    int n = pixels.size(), m = pixels.back().length(), ans = INT_MIN;
+    vector <int> row(n), col(m);
+    for(int i=0; i<n; i++){
+        for(int j=0; j<m; j++){
+            if(pixels[i][j] == '1'){
+                row[i]++;  col[j]++;
+            }
+        } }
+    for(int i=0; i<n; i++){
+        for(int j=0; j<m; j++){
+            int ones = row[i] + col[j];
+            int zeroes = n - row[i] + m - col[j];
+            ans = max(ans, ones - zeroes);
+        }
+    }
+    return ans;
+}
