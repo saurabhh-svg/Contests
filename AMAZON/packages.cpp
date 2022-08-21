@@ -16,15 +16,10 @@ void solve()
     cin >> k;
     sort(a, a + n);
     int ans = 0, p = 0, c = 0;
-    for (int i = 1; i <= a[n - 1] && c <= k; i++)
-    {
-        if (i != a[p])
-        {
-            ans += i;
-            c++;
-        }
-        else
-            p++;
+    for (int i = 1; i <= a[n - 1] && c <= k; i++){
+        if (i != a[p])   ans += i;  
+        else  p++;
+        c++;
     }
     cout << ans << endl;
 }
