@@ -11,15 +11,21 @@ void solve()
 {
     int n, ans = -1;
     cin >> n;
-    int a[n];
-    fl(i, n) cin >> a[i];
+    vector<int> index(1001, -1);
+    for (int i = 0; i < n; i++){
+        int x;
+        cin >> x;
+        index[x] = i + 1;
+    }
 
-    for (int i = n - 1; i >= 0;i--)  {
-        for (int j = n - 1; j >= 0;j--)     {
-            if (__gcd(a[i], a[j]) == 1)
-                ans = max(ans, i + j + 2);
+    for (int i = 1; i <= 1000; i++){
+        for (int j = 1; j <= 1000; j++)   {
+            if (index[i] != -1 && index[j] != -1 && __gcd(i , j ) == 1)
+                    ans = max(ans, (index[i] + index[j]));
+            
         }
-      }  cout << ans << endl;
+    }
+    cout << ans << endl;
 }
 
 signed main()
