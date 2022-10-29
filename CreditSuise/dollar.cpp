@@ -8,9 +8,7 @@ void solve()
     vector<vector<string>> v(n);
     for (int i = 0; i < n; i++)
         cin >> v[i][0];
-    int a[5] = {0, 1, 2, 3, 4};
-    for (auto i : a)
-        cout << i << " ";
+
 }
 
 signed main()
