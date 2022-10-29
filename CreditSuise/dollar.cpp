@@ -5,9 +5,11 @@ void solve()
 {
     int n;
     cin >> n;
-    vector<vector<string>> v(n);
+    string v[n][1];
     for (int i = 0; i < n; i++)
         cin >> v[i][0];
+      
+        
 
 }
 
