@@ -5,12 +5,17 @@ void solve()
 {
     int n;
     cin >> n;
-    string v[n][1];
+    string v[n];
     for (int i = 0; i < n; i++)
-        cin >> v[i][0];
-      
-        
+        cin >> v[i];
 
+    for (int i = 0; i < n;i++){
+        for (int j = 0; j < n;j++){
+            if(v[i][j]=='$') {
+                if(v[i+1][j])
+            }
+        }
+    }
 }
 
 signed main()
