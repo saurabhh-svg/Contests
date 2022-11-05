@@ -53,7 +53,8 @@
     "atomic": "cpp",
     "iomanip": "cpp",
     "type_traits": "cpp",
-    "__locale": "cpp"
+    "__locale": "cpp",
+    "queue": "cpp"
   },
   "C_Cpp.errorSquiggles": "Disabled"
 }
