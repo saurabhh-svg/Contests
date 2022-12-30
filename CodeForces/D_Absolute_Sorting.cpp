@@ -5,13 +5,17 @@ using namespace std;
 void helper(int lo, int hi, vector<int> v, int n, int &ans)
 {
     int mid = (lo + hi) / 2, flag = 0;
-    if (lo <= hi) {
+    if (lo <= hi)
+    {
         mid = (lo + hi) / 2;
-        for (int i = 0; i < n - 1; i++)   {
+        for (int i = 0; i < n - 1; i++)
+        {
             if ((abs(v[i] - mid)) > (abs(v[i + 1] - mid)))
             {
-                if (v[i] > v[i + 1]) flag = 1;
-                else  flag = 2;
+                if (v[i] > v[i + 1])
+                    flag = 1;
+                else
+                    flag = 2;
                 break;
             }
         }
