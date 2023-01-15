@@ -3,15 +3,6 @@
 using namespace std;
 vector<int> res;
 
-void dfs(vector<int> &v,int ind, int s, int d, vector<int> &vis){
-    if (s == d) return;
-    vis[s] = 1;
-    int temp = 0;
-    if(__gcd(v[s],v[]))
-
-    
-}
-
 void solve()
 {
     int n, ans = INT_MAX, source, dest;
@@ -24,7 +15,6 @@ void solve()
     source--;
     dest--;
     vector<int> vis(n, 0);
-    dfs(v, source, dest, vis);
     if (ans == INT_MAX)
     {
         cout << -1 << endl;

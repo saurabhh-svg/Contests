@@ -1,36 +1,38 @@
 #include <bits/stdc++.h>
 #define int long long int
 using namespace std;
-int andOperator(int x, int y)
+int andOperator(int a, int b)
 {
-    // Iterate over all bits of y, starting from the lsb, if it's equal to 1, flip it
-    for (int i = 0; i < (int)log2(y) + 1; i++) {
-        // repeat till x >= y, otherwise return the answer.
-        if (y <= x)     return y;
-        if (y & (1 << i))
-            y &= ~(1UL << i);
-    }  return y;
-}
-int msbPos(int n){
-    int msb_p = -1;
-    while (n) {
-        n = n >> 1;
-        msb_p++;
-    } return msb_p;
+    // ShiftCount variables counts till which bit every value will convert to 0
+    int shiftcount = 0;
+    // Iterate through every bit of a and b simultaneously
+    // If a == b then we know that beyond that the and value will remain constant
+    while (a != b and a > 0)
+    {
+        shiftcount++;
+        a = a >> 1;
+        b = b >> 1;
+    }
+    return int64_t(a << shiftcount);
 }
 
-void solve(){
-    int n, x, m = INT_MAX;
+void solve()
+{
+    // Increase number of operands -> AND value decreases
+    int n, x, m = -1;
     cin >> n >> x;
-    if (n == x)   m = n;
-    if (msbPos(x) > msbPos(n))  {
-        cout << -1 << endl;
-        return;
+    int lo = n, hi = 5*1e18;
+    while (lo <= hi)  {
+        int mid = (hi + lo) / 2;
+        int temp = andOperator(n, mid);
+        if (temp > x)    lo = mid + 1;
+        else if (temp < x)   hi = mid - 1;
+        else  {
+            m = mid;
+            hi = mid - 1;
+        }
     }
-    for (int i = n + 1; i < n+1e6; i++)  {
-        int p = andOperator(n, i);
-        m = min(m, p | x);
-    }  cout << m << endl;
+    cout << m << endl;
 }
 
 signed main()
