@@ -8,8 +8,10 @@ bool isOk(vector<int> &v, int mid, int n)
     for (int i = 0; i < n; i++)
     {
         int curr = i + 1;
-        if (v[i] >= curr - mid)  c++;
-        else if (v[i] <= curr + mid) c++;
+        if (v[i] >= curr - mid)
+            c++;
+        else if (v[i] <= curr + mid)
+            c++;
     }
     if (c > (n - (mid / 2 + mid % 2)))
         return false;
@@ -17,23 +19,34 @@ bool isOk(vector<int> &v, int mid, int n)
 }
 void solve()
 {
-    int n = 0;
+    int n = 0, left = 0, right = 0, ans;
     cin >> n;
-    vector<int> v(n);
+    vector<int> v(n), pos(n + 1);
     for (int i = 0; i < n; i++)
-        cin >> v[i];
-
-    int lo = 0, hi = (n / 2) + (n % 2), ans = hi;
-    while (lo <= hi)
     {
-        int mid = (lo + hi) / 2;
-        if (isOk(v, mid, n))  {
-            ans = mid;
-            hi = mid - 1;
-        }
-        else
-            lo = mid + 1;
+        cin >> v[i];
+        pos[v[i]] = i;
     }
+    if (n % 2 == 0)
+    {
+        left = n / 2;
+        right = left + 1;
+    }
+    else
+    {
+        left = n / 2;
+        right = left + 2;
+    }
+    ans = n / 2;
+    while (left >= 1 && right <= n)
+    {
+        if (pos[left] > pos[left + 1])  break;
+        if(pos[right]<pos[right-1])break;
+        ans--;
+        left--;
+        right++;
+    }
+
     cout << ans << endl;
 }
 

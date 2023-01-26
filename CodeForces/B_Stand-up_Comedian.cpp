@@ -5,13 +5,14 @@ void solve()
 {
     int n, ans = 0, a, b, c, d;
     cin >> a >> b >> c >> d;
-    if(a==0){
+    if (a == 0)
+    {
         cout << 1 << endl;
         return;
     }
     ans = a;
-    int x
-    ans += 2 * min(b, c);
+    ans += (2 * min(b, c));
+    ans += (min(a + 1, abs(b - c) + d));
     cout << ans << endl;
 }
 
