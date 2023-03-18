@@ -1,25 +1,54 @@
 #include <bits/stdc++.h>
-#define pi 3.141592653589793238462
-#define mod 1000000007
-#define ll long long
-#define ld long double
-#define vi vector<int>
-#define vll vector<ll>
-#define all(v) v.begin(), v.end()
-#define acc(v) accumulate(all(v), 0)
-#define pb push_back
-#define isort(v) sort(all(v))
-#define dsort(v) sort(v.rbegin(), v.rend())
 using namespace std;
-
+#define ll long long
+#define mod 998244353
 
 int main()
 {
-    ios_base::sync_with_stdio(false);
-    cin.tie(0);
-    int t = 1;
-    cin >> t; // Comment this line if there is only one TC
-    while (t-- > 0)
-        solve();
+    ll t;
+    cin >> t;
+    for (int i = 1; i <= t; i++)
+    {
+        ll n;
+        cin >> n;
+        string a, b;
+        cin >> a >> b;
+        vector<vector<int>> v(n, vector<int>(n, 0));
+        for (int j = 0; j < n; j++)
+        {
+            if (a[0] == b[j])
+            {
+                v[j][j] = 1;
+            }
+        }
+        for (int j = 1; j < n; j++)
+        {
+            for (int k = 0; k + j <= n; k++)
+            {
+                if (v[k][j + k - 1] == 1)
+                {
+                    if (j + k < n)
+                    {
+                        if (a[j] == b[j + k]) v[k][j + k] = 1;
+                    }
+                    if (k - 1 >= 0)
+                    {
+                        if (a[j] == b[k - 1]) v[k - 1][j + k - 1] = 1;
+                    }
+                }
+            }
+        }
+
+        bool ans = false;
+        if (v[0][n - 1] == 1)
+            ans = true;
+
+        cout << "Case " << i << ": ";
+        if (ans)
+            cout << "YES" << endl;
+        else
+            cout << "NO" << endl;
+    }
+
     return 0;
 }
