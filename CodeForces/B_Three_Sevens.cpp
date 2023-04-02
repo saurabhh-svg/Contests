@@ -6,7 +6,7 @@ void solve()
 {
     int m;
     cin >> m;
-    vector<int> ans(m+1);
+    vector<int> ans(m + 1);
     map<int, vector<int>> mp;
     for (int i = 1; i <= m; i++)
     {
@@ -34,7 +34,7 @@ void solve()
             }
         }
     }
-    for (int i = 1; i <= m;i++)
+    for (int i = 1; i <= m; i++)
         cout << ans[i] << " ";
     cout << endl;
 }
