@@ -1,1 +1,0 @@
-{"name":"Local: C_Andrew_and_Stones","url":"/Users/mymac/Desktop/Contests/CF/C_Andrew_and_Stones.cpp","tests":[{"id":1644689118858,"input":"4\n5\n1 2 2 3 6\n3\n1 3 1\n3\n1 2 1\n4\n3 1 1 2","output":"4\n-1\n1\n-1 "}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/mymac/Desktop/Contests/CF/C_Andrew_and_Stones.cpp","group":"local","local":true}

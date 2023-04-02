@@ -1,1 +1,0 @@
-{"name":"Local: Strong_Elements","url":"/Users/saurabh/Desktop/Contests/CodeChef/Strong_Elements.cpp","tests":[{"id":1656310163605,"input":"3\n3\n5 10 20\n4\n3 5 7 11\n4\n2 2 2 2","output":"3\n0\n4"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/saurabh/Desktop/Contests/CodeChef/Strong_Elements.cpp","group":"local","local":true}
