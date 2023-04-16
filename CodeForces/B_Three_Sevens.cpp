@@ -6,36 +6,34 @@ void solve()
 {
     int m;
     cin >> m;
-    vector<int> ans(m + 1);
-    map<int, vector<int>> mp;
-    for (int i = 1; i <= m; i++)
+    vector<int> ans(m, -1);
+    vector<vector<int>> v(m);
+    for (int i = 0; i < m; i++)
     {
         int n;
         cin >> n;
-        for (int j = 0; j < n; j++)
-        {
+        for (int j = 0; j < n; j++) {
             int x;
             cin >> x;
-            mp[x].push_back(i);
+            v[i].push_back(x);
         }
     }
-    set<int> s;
-    for (auto i : mp)
-    {
-        if (i.second.size() > 0)
-        {
-            ans[i.second[i.second.size() - 1]] = i.first;
-            int l = s.size();
-            s.insert(i.first);
-            if (s.size() == l)
-            {
+    map<int,int> vis;
+    for (int i = m - 1; i >= 0;i--){
+        for(auto x:v[i]){
+            if(!vis[x]) ans[i] = x;
+                vis[x] = 1;
+        }
+    }
+        for(auto i:ans){
+            if(i==-1) {
                 cout << -1 << endl;
                 return;
             }
         }
-    }
-    for (int i = 1; i <= m; i++)
-        cout << ans[i] << " ";
+
+    for (auto i : ans)
+        cout << i << " ";
     cout << endl;
 }
 
