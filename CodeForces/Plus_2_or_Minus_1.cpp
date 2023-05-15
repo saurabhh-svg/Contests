@@ -4,8 +4,14 @@ using namespace std;
 
 void solve()
 {
-    int n, k;
-    cin >> n >> k;
+    int y, ans = 1;
+    cin >> y;
+    if (y == 0)
+        ans = 1;
+
+    else
+        ans = 3 * y;
+    cout << ans << endl;
 }
 
 signed main()
@@ -17,3 +23,19 @@ signed main()
     while (test--)
         solve();
 }
+
+/*
+5
+0 -1 -2 -3 -4 -5
+2 4 6 8 10
+1
+
+1
+0 -1
+2
+
+3
+0 -1 -2 -3
+2 4 6
+1 3
+*/

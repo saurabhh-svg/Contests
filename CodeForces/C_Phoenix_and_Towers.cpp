@@ -1,44 +1,46 @@
 #include <bits/stdc++.h>
-#include <unordered_map>
-#define _ ios_base::sync_with_stdio(0);
-#define fs cin.tie(0);
-#define ll long long int
-#define pb push_back
-#define fl(i,n) for(int i=0;i<n;i++)
-#define pi 3.141592653589793238
-#define sortall(v) sort(v.begin(),v.end())
-#define sortrev(v) sort(v.end(),v.begin())
+#define int long long int
 using namespace std;
 
-void solve(){
-    int n, m, l;
-    cin >> n >> m >> l;
-    vector<int> v,c;
-    for (int i = 0; i < m; i++) {
-        int x;
-        cin >> x;
-        v.push_back(i + 1); //index vector 
-        c.push_back(x); //height vector
-    }
-    for (int i = 0; i < n - m; i++) {
-        int x;
-        cin >> x;
-      int y = min_element(c.begin(), c.end()) - c.begin();
-        v.push_back(y + 1);
-        c[y] += x;
-    }
-    cout << "YES" << endl;
-    for (int i = 0; i < n; i++)  cout << v[i] << " ";
+void solve()
+{
+    int n, m, x;
+    cin >> n >> m >> x;
+    vector<int> heights(n);
 
+    for (int i = 0; i < n; i++)
+        cin >> heights[i];
+
+    // algo -> finding the tower with minimum height and adding the current height into it
+
+    vector<int> ans(n);
+    // min heap pq
+    priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
+    // height of tower,ith tower index
+    for (int i = 0; i < m; i++)
+        pq.push({0, i});
+
+    for (int i = 0; i < n; i++)
+    {
+        int h = pq.top().first;
+        int ind = pq.top().second;
+        pq.pop();
+        ans[i] = ind + 1;
+        h += heights[i];
+        pq.push({h, ind});
+    }
+    cout << "YES\n";
+    for (auto i : ans)
+        cout << i << " ";
     cout << endl;
 }
 
-//===========MAIN BEGIN===========
-
-int main(){ _ fs
-ll test;
- cin>>test;
- while(test--)
-solve();
-return 0;
- }
+signed main()
+{
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    int test;
+    cin >> test;
+    while (test--)
+        solve();
+}
