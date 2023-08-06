@@ -1,6 +1,9 @@
+OAs
 .cph
 .vscode
 .bin
 .dist
+.idea
 .DS_Store
 .vscode/*
+
